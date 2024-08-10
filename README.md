@@ -1,2 +1,3 @@
-# snelhulpmiddel
-dit is een hulpmiddel gemaakt in python dat handig kan zijnals je een app moet openen ofzoiets.
+# Dit is een hulpmiddel dat ervoor zorgt dat je je computer sneller kan gebruiken.
+alle commands zijn
+[hhh]
