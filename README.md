@@ -23,24 +23,23 @@ discord
 
 alle commands zijn
 ```
-help
-stop
-open gmail
-open youtube
-open facebook
-open google
-open notepad
-open calculator
-open paint
-search
-clear
-help
-open whatsapp
-open vs
-verander kleur
-open app
-zoek op wikipedia door wat is
-install app
+help(een lijst van alle commands)
+stop(sluit het programma)
+open gmail(opent de gmail website)
+open youtube(opent de youtube website)
+open facebook(opent de facebook website)
+open google(opent de google website)
+open notepad(opent kladblok)
+open calculator(opent de rekenmachine app)
+open paint(opent paint)
+search(zoekt iets op google)
+clear(maakt het scherm leeg)
+open whatsapp(opent whatsapp/vraagt eerst web of app)
+open vs(opent visual studio code)
+verander kleur(verandert de kleur van de tekst/alleen Windows)
+open app(opent een app naar keuze)
+zoek op wikipedia door wat is(bv. wat is python)
+install app (zie lijst hierboven)
 ```
 
 ## Hoe installeer ik dit
@@ -50,11 +49,12 @@ Als eerst download je dit project.
 
 Ten tweede schrijf je in je terminal 
 ```pip install AppOpener```
+in windows cmd
 
 
 
 Als laatste open je dit project.
-(in windows CMD)
+
 
 
 ## Hoe werk ik hieraan
