@@ -48,7 +48,11 @@ Als eerst download je dit project.
 
 
 Ten tweede schrijf je in je terminal 
-```pip install AppOpener```
+```
+pip install AppOpener
+pip install wikipedia
+```
+
 in windows cmd
 
 
