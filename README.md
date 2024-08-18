@@ -23,23 +23,30 @@ discord
 
 alle commands zijn
 ```
-help(een lijst van alle commands)
-stop(sluit het programma)
-open gmail(opent de gmail website)
-open youtube(opent de youtube website)
-open facebook(opent de facebook website)
-open google(opent de google website)
-open notepad(opent kladblok)
-open calculator(opent de rekenmachine app)
-open paint(opent paint)
-search(zoekt iets op google)
-clear(maakt het scherm leeg)
-open whatsapp(opent whatsapp/vraagt eerst web of app)
-open vs(opent visual studio code)
-verander kleur(verandert de kleur van de tekst/alleen Windows)
-open app(opent een app naar keuze)
-zoek op wikipedia door wat is(bv. wat is python)
-install app (zie lijst hierboven)
+stop: stopt het programma
+open gmail: opent de gmail website
+open youtube: opent de youtube website
+open facebook: opent de facebook website
+open google: opent de website van google
+open kladblok: opent de app kladblok
+open rekenmachine: opent de app rekenmachine
+open paint: opent de app paint
+search: zoekt iets op op google
+clear: maakt het scherm leeg
+help: een lijst van alle commands
+open whatsapp: opent de whatsapp website/app
+open vs: opent de app Visual Studio Code
+verander kleur: verandert de kleur van de tekst
+open app: opent een app naar keuze
+zoek op wikipedia door wat is: zoekt iets op op wikipedia(wat achter wat is is)
+install app: installeert een app
+vertaal: vertaalt een tekst naar keuze
+nieuws: laat de laatste nieuwsberichten zien
+weer: laat het weer zien van een plaats naar keuze
+url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)
+ip: laat de locatie van een IP adres zien
+recept: laat het recept van een gerecht zien()
+iss: laat het aantal mensen in de ruimte zien en de locatie van de ISS
 ```
 
 ## Hoe installeer ik dit
@@ -51,8 +58,9 @@ Ten tweede schrijf je in je terminal
 ```
 pip install AppOpener
 pip install wikipedia
+pip install requests
+pip install googletrans
 ```
-
 in windows cmd
 
 
