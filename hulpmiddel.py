@@ -426,7 +426,7 @@ while True:
     elif "url" and "klein" in ai:
         klein_url()
     elif ai == "help":
-        lijst = ["stop: stopt het programma", "open gmail: opent de gmail website", "open youtube: opent de youtube website", "open facebook: opent de facebook website", "open google: opent de website van google", "open kladblok: opent de app kladblok", "open rekenmachine: opent de app rekenmachine", "open paint: opent de app paint", "search: zoekt iets op op google", "clear: maakt het scherm leeg", "help: een lijst van alle commands", "open whatsapp: opent de whatsapp website/app", "open vs: opent de app Visual Studio Code", "verander kleur: verandert de kleur van de tekst", "open app: opent een app naar keuze", "zoek op wikipedia door wat is: zoekt iets op op wikipedia(wat achter wat is is)", "install app: installeert een app", "vertaal: vertaalt een tekst naar keuze", "nieuws: laat de laatste nieuwsberichten zien", "weer: laat het weer zien van een plaats naar keuze", "url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)", "ip: laat de locatie van een IP adres zien", "recept: laat het recept van een gerecht zien()", "iss: laat het aantal mensen in de ruimte zien en de locatie van de ISS", "afbeelding: maakt een afbeelding", "telefoonnummer: laat een telefoonnummer opslaan of bekijken"]
+        lijst = ["stop: stopt het programma", "open gmail: opent de gmail website", "open youtube: opent de youtube website", "open facebook: opent de facebook website", "open google: opent de website van google", "open kladblok: opent de app kladblok", "open rekenmachine: opent de app rekenmachine", "open paint: opent de app paint", "search: zoekt iets op op google", "clear: maakt het scherm leeg", "help: een lijst van alle commands", "open whatsapp: opent de whatsapp website/app", "open vs: opent de app Visual Studio Code", "verander kleur: verandert de kleur van de tekst", "open app: opent een app naar keuze", "zoek op wikipedia door wat is: zoekt iets op op wikipedia(wat achter wat is is)", "install app: installeert een app", "vertaal: vertaalt een tekst naar keuze", "nieuws: laat de laatste nieuwsberichten zien", "weer: laat het weer zien van een plaats naar keuze", "url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)", "ip: laat de locatie van een IP adres zien", "recept: laat het recept van een gerecht zien()", "iss: laat het aantal mensen in de ruimte zien en de locatie van de ISS", "afbeelding: maakt een afbeelding", "telefoonnummer: laat een telefoonnummer opslaan of bekijken", "reken: berekent iets", "hoe laat is het: laat het datum en tijd zien", "open mobiele camera: opent de mobiele camera", "geluid luider: zet het geluid luider", "geluid lager: zet het geluid lager", "geluid aan/uit: zet het geluid aan: uit","vertel mop: vertelt een mop over iets wat met computers te maken", "hoeveel batterij: zegt het procent batterij", "screenshot: neemt een screenshot", "sluit af: sluit de computer af", "start opnieuw: zet de computer uit en dan opnieuw aan", "vergrendel computer: vergendelt je computer", "systeem informatie: vertelt informatie over het systeem", "speel muziek: speelt muziek dat in de lijst muziek zit"]
         print("\n".join(lijst))
     elif "ip" in ai:
         ai = input("Wil je de locatie van een IP adres zien? ")
@@ -461,13 +461,13 @@ while True:
                     break
             cv2.destroyAllWindows()
     elif "speel muziek" in ai:
-            musiek_dir = "Music"
-            liedjes = os.listdir(musiek_dir)
+            muziek_dir = "C:/Users/hicac/Music"
+            liedjes = os.listdir(muziek_dir)
             liedjes.remove('desktop.ini', )
             print(liedjes)
             for lied in liedjes:
                 if lied.endswith('.mp3'):
-                    os.startfile(os.path.join(musiek_dir, lied))
+                    os.startfile(os.path.join(muziek_dir, lied))
     elif "alarm" in ai:
             alarm = int(datetime.datetime.now().hour)
             print("Om welk uur moet het alarm afgaan?", end=" ")
@@ -493,11 +493,8 @@ while True:
     elif "start" and "opnieuw" in ai:
         os.system("shutdown /r /t 5")
     elif "vergrendel" and "computer" in ai:
-        gui.keyDown("winleft")
-        gui.press("l")
-        gui.keyUp("winleft")
+        os.system("rundll32.exe user32.dll,LockWorkStation")
     elif "systeem" and "informatie" in ai:
-        '''Get Hardware and System information using Python'''
         mijn_pc = platform.uname()
         print(f"Besturingssysteem: {mijn_pc.system}")
 
