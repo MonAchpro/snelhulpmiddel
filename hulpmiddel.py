@@ -1,20 +1,93 @@
 #alles extra
 import os
 import webbrowser as web
+import datetime
+import tkinter.messagebox as tk_messagebox
 try:
     import AppOpener as ap
 except:
-    print("AppOpener is niet geinstalleerd. Download AppOpener via de terminal. (pip install AppOpener)")
+    if ".py" in __file__:
+        os.system("pip install AppOpener")
+try:
+    import speech_recognition as sr
+except:
+    if ".py" in __file__:
+        os.system("pip install SpeechRecognition")
+try:
+    import pyttsx3
+except:
+    if ".py" in __file__:
+        os.system("pip install pyttsx3")
 try:
     import wikipedia as wiki
 except:
-    print("Wikipedia is niet geinstalleerd. Download Wikipedia via de terminal. (pip install wikipedia)")
+    if ".py" in __file__:
+        os.system("pip install wikipedia")
 try:
-    import googletrans 
-
+    import googletrans
 except:
-    print("Googletrans is niet geinstalleerd. Download Googletrans via de terminal. (pip install googletrans)")
-import requests
+    if ".py" in __file__:
+        os.system("pip install googletrans")
+try:
+    import requests
+except:
+    if ".py" in __file__:
+        os.system("pip install requests")
+try:
+    import cv2
+except:
+    if ".py" in __file__:
+        os.system("pip install opencv-python")
+try:
+    import pyjokes
+except:
+    if ".py" in __file__:
+        os.system("pip install pyjokes")
+try:
+    import pyautogui as gui
+except:
+    if ".py" in __file__:
+        os.system("pip install pyautogui")
+try:
+    import cv2
+except:
+    if ".py" in __file__:
+        os.system("pip install opencv-python")
+try:
+    import psutil
+except:
+    if ".py" in __file__:
+        os.system("pip install psutil")
+import platform
+
+def afbeelding():
+
+# Open the camera (0 is usually the default camera)
+    cap = cv2.VideoCapture(0)
+
+    # Check if the camera opened successfully
+    if not cap.isOpened():
+        print("Error: Kon de camera niet openen.")
+    else:
+        # Capture a single frame
+        ret, frame = cap.read()
+        
+        if ret:
+            afb = input("Wat zal de naam van de afbeelding zijn? ")
+            # Display the captured image in a window
+            cv2.imshow(afb, frame)
+            
+            # Save the captured image
+            cv2.imwrite(afb +'.jpg', frame)
+            
+            # Wait for a key press and close the window
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
+        else:
+            print("Error")
+
+    # Release the camera
+    cap.release()
 
 
 #functies
@@ -115,6 +188,9 @@ def install():
         install_file("https://dl.google.com/tag/s/appguid%3D%7B65E60E95-0DE9-43FF-9F3F-4F7D2DFF04B5%7D%26iid%3D%7B65E60E95-0DE9-43FF-9F3F-4F7D2DFF04B5%7D%26lang%3Dnl%26browser%3D4%26usagestats%3D1%26appname%3DGoogle%2520Earth%2520Pro%26needsadmin%3DTrue%26brand%3DGGGE/earth/client/GoogleEarthProSetup.exe", "googleearth.exe")
     elif app == "firefox":
         install_file("https://download.mozilla.org/?product=firefox-stub&os=win&lang=en-US", "firefox.exe")
+    elif "lijst" in app:
+        everyapp = ["discord","steam","spotify","epicgames","vlc","obs","virtualbox","google_earth","firefox"]
+        print("\n".join(everyapp))
     else:
         print("app niet gevonden")
 
@@ -182,11 +258,67 @@ def ISS():
     print("het aantal mensen in de ruimte is:") 
     print(response.json())
 
+def telefoonnummer():
+    ai = input("Wilt u een telefoonnummer opslaan of bekijken? ")
+    if "opslaan" in ai:
+        nummer = input("Welk nummer wilt u opslaan? ")
+        naam = input("Hoe wilt u dit telefoonnummer noemen? ")
+        with open(naam + ".txt", "w") as file:
+            file.write(nummer)
+    elif "bekijken" in ai:
+        naam = input("Welk nummer wilt u bekijken? ")
+        with open(naam + ".txt", "r") as file:
+            nummer = file.read()
+        print(nummer)
+
+def luisterdef():
+        ai = None
+        with sr.Microphone() as source:        
+            print("luisteren....")
+            stem = luisteren.listen(source)
+            ai = luisteren.recognize_google(stem, language =  "nl-NL")
+            print(ai)
+            return ai.lower()
+
+
+def rekenen():    
+    if luister_typ == "2":
+        reken = input("Welke bewerking wilt u doen? \n1) optellen \n2) aftrekken \n3) delen \n4) vermenigvuldigen\n5) machten \n6)vierkantswortel\n")
+    elif luister_typ == "1":
+        print("Welke bewerking wilt u doen? \n1) optellen \n2) aftrekken \n3) delen \n4) vermenigvuldigen\n")
+        reken = luisterdef()
+    if reken == "1":
+        getal1 = int(input("Wat is het eerste getal? "))
+        getal2 = int(input("Wat is het tweede getal? "))
+        print(getal1 + getal2)
+    elif reken == "2":
+        getal1 = int(input("Wat is het eerste getal? "))
+        getal2 = int(input("Wat is het tweede getal? "))
+        print(getal1 - getal2)
+    elif reken == "3":
+        getal1 = int(input("Wat is het eerste getal? "))
+        getal2 = int(input("Wat is het tweede getal? "))
+        print(getal1 / getal2)
+    elif reken == "4":
+        getal1 = int(input("Wat is het eerste getal? "))
+        getal2 = int(input("Wat is het tweede getal? "))
+        print(getal1 * getal2)
+    elif reken == "5":
+        getal1 = int(input("Wat is het eerste getal? "))
+        getal2 = int(input("Wat is het tweede getal? "))
+        print(getal1 ** getal2)
+    elif reken == "6":
+        getal1 = int(input("Wat is het eerste getal? "))
+        print(getal1 ** 0.5)
 
 
 #dingetjes belangrijk voor de code
 #zet de wikipedia taal in het Nederlands
+clear_screen()
 wiki.set_lang("nl")
+luisteren = sr.Recognizer()
+alarm = 0
+timealarmhour = None
 print("Bepaalde functies zullen niet werken zonder internet.")
 print("dit is een hulpmiddel wat u sneller informatie laat vinden en sneller apps opent. Schrijf help voor alle commands")
 #kijkt of er een newsapi.txt bestand bestaat zo niet maakt het een bestand met jouw api erin
@@ -204,7 +336,7 @@ if not os.path.exists("newsapi.txt"):
 #kijkt of er een newsapi.txt bestand bestaat zo niet maakt het een bestand met jouw api erin
 if not os.path.exists("weatherapi.txt"):
     ai = input("Wilt u ook informatie over het weer? ")
-    if "ja" in ai:
+    if "ja" in ai.lower():
         weatherapi = input("Als u een weatherapi account heeft geef uw weatherapi alstublieft anders zou u er een kunnen maken en het nu typen of nee typen om het te annuleren. ")
         if weatherapi == "nee":
             pass
@@ -225,10 +357,16 @@ with open ("newsapi.txt", "r") as file:
 with open ("weatherapi.txt", "r") as file:
     weatherapi = file.read()
 
-
+luister_typ = input("praten(1) of typen(2)? ")
 #main
 while True:
-    ai = input("wat wil je doen? ")
+    if alarm == timealarmhour and alarm == timealarmmin:
+        tk_messagebox.showinfo("Alarm", "Het alarm is afgaan")
+    if luister_typ == "2": 
+        ai = input("wat wil je doen? ")
+        ai = ai.lower()
+    elif luister_typ == "1":
+        ai = luisterdef()
     if ai == "stop":
         break
     elif "open gmail" in ai:
@@ -288,7 +426,7 @@ while True:
     elif "url" and "klein" in ai:
         klein_url()
     elif ai == "help":
-        lijst = ["stop: stopt het programma", "open gmail: opent de gmail website", "open youtube: opent de youtube website", "open facebook: opent de facebook website", "open google: opent de website van google", "open kladblok: opent de app kladblok", "open rekenmachine: opent de app rekenmachine", "open paint: opent de app paint", "search: zoekt iets op op google", "clear: maakt het scherm leeg", "help: een lijst van alle commands", "open whatsapp: opent de whatsapp website/app", "open vs: opent de app Visual Studio Code", "verander kleur: verandert de kleur van de tekst", "open app: opent een app naar keuze", "zoek op wikipedia door wat is: zoekt iets op op wikipedia(wat achter wat is is)", "install app: installeert een app", "vertaal: vertaalt een tekst naar keuze", "nieuws: laat de laatste nieuwsberichten zien", "weer: laat het weer zien van een plaats naar keuze", "url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)", "ip: laat de locatie van een IP adres zien", "recept: laat het recept van een gerecht zien()", "iss"]
+        lijst = ["stop: stopt het programma", "open gmail: opent de gmail website", "open youtube: opent de youtube website", "open facebook: opent de facebook website", "open google: opent de website van google", "open kladblok: opent de app kladblok", "open rekenmachine: opent de app rekenmachine", "open paint: opent de app paint", "search: zoekt iets op op google", "clear: maakt het scherm leeg", "help: een lijst van alle commands", "open whatsapp: opent de whatsapp website/app", "open vs: opent de app Visual Studio Code", "verander kleur: verandert de kleur van de tekst", "open app: opent een app naar keuze", "zoek op wikipedia door wat is: zoekt iets op op wikipedia(wat achter wat is is)", "install app: installeert een app", "vertaal: vertaalt een tekst naar keuze", "nieuws: laat de laatste nieuwsberichten zien", "weer: laat het weer zien van een plaats naar keuze", "url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)", "ip: laat de locatie van een IP adres zien", "recept: laat het recept van een gerecht zien()", "iss: laat het aantal mensen in de ruimte zien en de locatie van de ISS", "afbeelding: maakt een afbeelding", "telefoonnummer: laat een telefoonnummer opslaan of bekijken"]
         print("\n".join(lijst))
     elif "ip" in ai:
         ai = input("Wil je de locatie van een IP adres zien? ")
@@ -298,8 +436,82 @@ while True:
         recept()
     elif "iss" in ai:
         ISS()
+    elif "afbeelding" in ai:
+        afbeelding()
+    elif "telefoonnummer" in ai:
+        telefoonnummer()
+    elif "reken" in ai:
+        rekenen()
     elif ai == "":
         pass
+    elif "hoe laat is het" in ai:
+        print(translate(datetime.datetime.now().strftime("%A, %d %B %Y %I %H:%M:%S"), "nl")) 
+    elif "open mobiele camera" in ai:
+            import urllib.request
+            import cv2
+            import numpy as np
+            url = input("Typ de link: ")
+            url = url + "/shot.jpg"
+            while True:
+                img_arr = np.array(bytearray(urllib.request.urlopen(url).read()), dtype=np.uint8)
+                img = cv2.imdecode(img_arr, -1)
+                cv2.imshow('IPWebcam', img)
+                q = cv2.waitKey(1)
+                if q == ord('q'):
+                    break
+            cv2.destroyAllWindows()
+    elif "speel muziek" in ai:
+            musiek_dir = "Music"
+            liedjes = os.listdir(musiek_dir)
+            liedjes.remove('desktop.ini', )
+            print(liedjes)
+            for lied in liedjes:
+                if lied.endswith('.mp3'):
+                    os.startfile(os.path.join(musiek_dir, lied))
+    elif "alarm" in ai:
+            alarm = int(datetime.datetime.now().hour)
+            print("Om welk uur moet het alarm afgaan?", end=" ")
+            timealarmhour = int(input())
+            print("Welk minuut", end=" ")
+            timealarmmin = int(input())
+    elif "geluid" and "luider" in ai:
+        gui.press("volumeup")
+    elif "geluid" and "lager" in ai:
+        gui.press("volumedown")
+    elif "geluid" in ai and "uit" or "aan" in ai:
+        gui.press("volumemute")
+    elif "vertel" and "mop" in ai:
+        print(translate(pyjokes.get_joke(category="neutral"), "nl"))
+    elif "hoeveel" and "batterij" in ai:
+        batterij = psutil.sensors_battery()
+        print("Er is ", batterij.percent, "%")
+    elif "screenshot" in ai:
+        afb = gui.screenshot()
+        afb.save(f"{input("Hoe moet de afbeelding genoemd worden?")}.png")
+    elif "sluit" and "af" in ai:
+            os.system("shutdown /s /t 5")
+    elif "start" and "opnieuw" in ai:
+        os.system("shutdown /r /t 5")
+    elif "vergrendel" and "computer" in ai:
+        gui.keyDown("winleft")
+        gui.press("l")
+        gui.keyUp("winleft")
+    elif "systeem" and "informatie" in ai:
+        '''Get Hardware and System information using Python'''
+        mijn_pc = platform.uname()
+        print(f"Besturingssysteem: {mijn_pc.system}")
+
+        print(f"Computer naam: {mijn_pc.node}")
+
+        print(f"uitgekomen versie: {mijn_pc.release}")
+
+        print(f"versie: {mijn_pc.version}")
+
+        print(f"Machine: {mijn_pc.machine}")
+
+        print(f"Processor: {mijn_pc.processor}")
+
+        print(f"Architectuur: {platform.architecture}")
     else:
         print("dit commando bestaat niet")
         print("Dit is nog in het begin van mijn werk en wat jij net hebt ingetypt wordt hopelijk later toegevoegd.\nschrijf help voor alle commands")
