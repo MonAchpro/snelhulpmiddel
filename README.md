@@ -47,23 +47,26 @@ url verkorten:verkort een url naar keuze(je moet ook https:// in je url zetten)
 ip: laat de locatie van een IP adres zien
 recept: laat het recept van een gerecht zien()
 iss: laat het aantal mensen in de ruimte zien en de locatie van de ISS
+reken: berekent iets
+hoe laat is het: vertelt de tijd
+open mobiele camera: opent de camera van je gsm aan de hand van een app(naam = IP webcam)
+speel muziek: speelt alle liedjes dat in de map muziek zit
+geluid luider: zet het geluid luider
+geluid lager: zet het geluid lager
+geluid aan/uit: zet het geluid aan: uit
+vertel mop: vertelt een mop over iets wat met computers te maken
+hoeveel batterij: zegt het procent batterij
+screenshot: neemt een screenshot
+sluit af: sluit de computer af
+start opnieuw: zet de computer uit en dan opnieuw aan
+vergrendel computer: vergendelt je computer
+systeem informatie: vertelt informatie over het systeem
 ```
 
 ## Hoe installeer ik dit
 Als eerst download je dit project.
 
-
-
-Ten tweede schrijf je in je terminal 
-```
-pip install AppOpener
-pip install wikipedia
-pip install requests
-pip install googletrans
-```
-in windows cmd
-
-
+Je hoeft niks in je terminal te schrijven(dat is automatisch)
 
 Als laatste open je dit project.
 
