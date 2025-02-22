@@ -64,9 +64,11 @@ systeem informatie: vertelt informatie over het systeem
 ```
 
 ## Hoe installeer ik dit
-Als eerst download je dit project.
-
-Je hoeft niks in je terminal te schrijven(dat is automatisch)
+### Benodigdheden:
+      python
+### Stappen
+Als eerste download je dit bestand.
+Je hoeft niks in je terminal te schrijven(dat is automatisch).
 
 Als laatste open je dit project.
 
